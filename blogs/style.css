@@ -1,0 +1,73 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+     
+}
+body{
+    background-image: url(./hero-slider-1.jpg);
+    
+    
+}
+.container{
+    width: 100%;
+
+}
+.container .row{
+    width: 80%;
+    margin: auto;
+}
+.container .row .header{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+}
+.container .row .header h1{
+    padding-top: 30px;
+    font-size: 45px;
+    color: rgb(208, 201, 201);   
+}
+.container .row .header p{
+    margin-block: 15px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgb(168, 198, 198);
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.content .card{
+    flex:1;
+    margin: 50px 20px;
+    box-shadow: 10px 5px 5px rgb(208, 201, 201);
+     
+}
+.image{
+   width: 80%;
+   height: 50%;
+}
+.content .card img{
+    width: 100%;
+    height: auto;
+
+}
+.content .card h4{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 25px;
+    color: aliceblue;
+}
+.content .card p{
+    font-size: 20px;
+    color: rgb(241, 236, 236);
+    line-height: 1.5;
+    padding: 10px;
+}
+@media screen and (max-width: 850px){
+ .content{
+    flex-direction: column;
+ }   
+}
