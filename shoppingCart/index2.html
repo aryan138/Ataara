@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Information</title>
+    <link rel="stylesheet" href="Style2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> <!-- Add this line -->
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <form action="/submit_payment" method="post">
+            <h2>Billing Information</h2>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="firstname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lastname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" required>
+
+            <h2>Payment Method</h2>
+            <label for="payment-method">Choose your payment method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="credit-card">Credit Card</option>
+                <option value="debit-card">Debit Card</option>
+                <option value="upi">UPI</option>
+            </select>
+
+            <!-- Credit Card Section -->
+            <div id="credit-card-section" class="payment-section">
+                <label for="cc-number">Credit Card Number:</label>
+                <input type="text" id="cc-number" name="cc-number" required>
+
+                <label for="cc-expiration">Expiration Date (MM/YY):</label>
+                <input type="text" id="cc-expiration" name="cc-expiration" required>
+
+                <label for="cc-cvv">CVV:</label>
+                <input type="text" id="cc-cvv" name="cc-cvv" required>
+            </div>
+
+            <!-- Debit Card Section -->
+            <div id="debit-card-section" class="payment-section">
+                <label for="dc-number">Debit Card Number:</label>
+                <input type="text" id="dc-number" name="dc-number" required>
+
+                <label for="dc-expiration">Expiration Date (MM/YY):</label>
+                <input type="text" id="dc-expiration" name="dc-expiration" required>
+
+                <label for="dc-cvv">CVV:</label>
+                <input type="text" id="dc-cvv" name="dc-cvv" required>
+            </div>
+
+            <!-- UPI Section -->
+            <div id="upi-section" class="payment-section">
+                <label for="upi-method">Select UPI Method:</label>
+                <select id="upi-method" name="upi-method">
+                    <option value="upi-id">Pay with UPI ID</option>
+                    <option value="gpay">Google Pay</option>
+                    <option value="phonepe">PhonePe</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="qr">Pay via QR Code</option>
+                </select>
+
+                <!-- UPI ID -->
+                <div id="upi-id-section" class="upi-method-section">
+                    <label for="upi-id">UPI ID:</label>
+                    <input type="text" id="upi-id" name="upi-id">
+                </div>
+
+                <!-- Google Pay -->
+                <div id="gpay-section" class="upi-method-section">
+                    <label for="gpay-upi-id">Google Pay UPI ID:</label>
+                    <input type="text" id="gpay-upi-id" name="gpay-upi-id">
+                </div>
+
+                <!-- PhonePe -->
+                <div id="phonepe-section" class="upi-method-section">
+                    <label for="phonepe-upi-id">PhonePe UPI ID:</label>
+                    <input type="text" id="phonepe-upi-id" name="phonepe-upi-id">
+                </div>
+
+                <!-- Paytm -->
+                <div id="paytm-section" class="upi-method-section">
+                    <label for="paytm-upi-id">Paytm UPI ID:</label>
+                    <input type="text" id="paytm-upi-id" name="paytm-upi-id">
+                </div>
+
+                <!-- QR Code -->
+                <div id="qr-section" class="upi-method-section">
+                    <button type="button" id="generate-qr-button">Generate QR Code</button>
+                    <div id="qr-code"></div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('payment-method').addEventListener('change', function() {
+            var creditCardSection = document.getElementById('credit-card-section');
+            var debitCardSection = document.getElementById('debit-card-section');
+            var upiSection = document.getElementById('upi-section');
+
+            creditCardSection.style.display = 'none';
+            debitCardSection.style.display = 'none';
+            upiSection.style.display = 'none';
+
+            if (this.value === 'credit-card') {
+                creditCardSection.style.display = 'block';
+            } else if (this.value === 'debit-card') {
+                debitCardSection.style.display = 'block';
+            } else if (this.value === 'upi') {
+                upiSection.style.display = 'block';
+            }
+        });
+
+        document.getElementById('upi-method').addEventListener('change', function() {
+            var upiIdSection = document.getElementById('upi-id-section');
+            var gpaySection = document.getElementById('gpay-section');
+            var phonepeSection = document.getElementById('phonepe-section');
+            var paytmSection = document.getElementById('paytm-section');
+            var qrSection = document.getElementById('qr-section');
+
+            upiIdSection.style.display = 'none';
+            gpaySection.style.display = 'none';
+            phonepeSection.style.display = 'none';
+            paytmSection.style.display = 'none';
+            qrSection.style.display = 'none';
+
+            if (this.value === 'upi-id') {
+                upiIdSection.style.display = 'block';
+            } else if (this.value === 'gpay') {
+                gpaySection.style.display = 'block';
+            } else if (this.value === 'phonepe') {
+                phonepeSection.style.display = 'block';
+            } else if (this.value === 'paytm') {
+                paytmSection.style.display = 'block';
+            } else if (this.value === 'qr') {
+                qrSection.style.display = 'block';
+            }
+        });
+
+        // Trigger change event on page load to set the initial state
+        document.getElementById('payment-method').dispatchEvent(new Event('change'));
+        document.getElementById('upi-method').dispatchEvent(new Event('change'));
+
+        // QR Code generation logic
+        document.getElementById('generate-qr-button').addEventListener('click', function() {
+            var qrCodeDiv = document.getElementById('qr-code');
+            qrCodeDiv.innerHTML = ''; // Clear any existing QR code
+            var qr = new QRCode(qrCodeDiv, {
+                text: "upi://pay?pa=YOUR_UPI_ID&pn=YOUR_NAME", // Replace with actual UPI payment string
+                width: 128,
+                height: 128
+            });
+        });
+    </script>
+</body>
+</html>

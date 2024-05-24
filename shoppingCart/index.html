@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ataara</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  
+</head>
+
+<body>
+  <div class="video-background">
+    <video autoplay muted loop id="background-video">
+      <source src="./src/ve.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="navbar">
+    <a href="../index.html" class="logo">
+      <img src="../assets/images/logo.png" width="160" height="50" alt="Ataara - Home">
+    </a>
+    <a href="cart.html">
+      <div class="cart">
+        <i class="bi bi-cart2"></i>
+        <div  id="cartAmount" class="cartAmount">0</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="shop" id="shop">
+    <!-- Products will be dynamically added here -->
+  </div>
+
+  <script src="src/Data.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
