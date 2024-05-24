@@ -11,7 +11,7 @@ const addEventOnElements = function (elements, eventType, callback) {
     for (let i = 0, len = elements.length; i < len; i++) {
     elements[i].addEventListener(eventType, callback);
     }
-}
+} 
 //navbar
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
@@ -124,3 +124,10 @@ window.addEventListener("mousemove", function (event) {
 
 
 
+const login_signUp = document.getElementById("login-signup-id")
+let kkk = localStorage.getItem('user')
+console.log(kkk)
+if(kkk){
+    login_signUp.innerHTML = JSON.parse(kkk).name
+    login_signUp.href = "/"
+}

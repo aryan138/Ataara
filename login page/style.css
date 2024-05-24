@@ -296,37 +296,6 @@ text-decoration: none;
     text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :root {
 
     /**
@@ -483,5 +452,3 @@ text-decoration: none;
   .bt-secondary::before { background-color: var(--smoky-black-1); }
   
   .bt-secondary .text-2 { color: var(--white); }
-
-  

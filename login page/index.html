@@ -1,123 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page of website</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
+
 <body>
     <header class="header">
+        <nav class="header">
+            <nav class="navbar">
+                <a href="../index.html">Home</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#service">Services</a>
+                <a href="../index.html#contact">Contact</a>
+            </nav>
+            <a href="../Earn Money/index.html" class="bt bt-secondary">
+                <span class="text text-1">Earn Money</span>
+                <span class="text text-2" aria-hidden="true">Earn Money</span>
+            </a>
+        </nav>
+    </header>
+    <div class="backgroung"></div>
+    <div class="container">
+        <div class="content">
+            <h2 class="logo">ATAARA</h2>
+            <div class="text-sci">
+                <h2>Where fasion meets<br><span>individuality</span></h2>
 
-    
-<nav class="header">
-    <nav class="navbar">
-        <a href="../index.html">Home</a>
-        <a href="../index.html#about">About</a>
-        <a href="../index.html#service">Services</a>
-        <a href="../index.html#contact">Contact</a>
-    </nav>
-        <a href="../Earn Money/index.html" class="bt bt-secondary" >
-            <span class="text text-1">Earn Money</span>
-            <span class="text text-2" aria-hidden="true">Earn Money</span>
-        </a>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsam, non tempora. Fugit odio quam hic, blanditiis, autem
+                    natus mollitia nesciunt repellendus maxime
+                    molestiae doloribus minus itaque minima soluta vel architecto!</p>
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="logreg-box">
+            <!-- SIGN IN CODE  -->
+            <div class="form-box login">
+                <form id="loginForm">
+                    <h2> Sign In</h2>
 
-</nav>
-</header>
-<div class="backgroung"></div>
-<div class="container">
-    <div class="content">
-        <h2 class="logo">ATAARA</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxl-gmail'></i></span>
+                        <input id="loginEmail" type="email" required>
+                        <label>Email</label>
+                    </div>
 
-        <div class="text-sci">
-            <h2>Where fasion meets<br><span>individuality</span></h2>
-
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                 Ipsam, non tempora. Fugit odio quam hic, blanditiis, autem
-                  natus mollitia nesciunt repellendus maxime
-                   molestiae doloribus minus itaque minima soluta vel architecto!</p>
-                   <div class="social-icons">
-                    <!-- <a href="#"><i class='bx bxl-linkedin'></i></a> -->
-                    <a href="#"><i class='bx bxl-instagram' ></i></a>
-                    <a href="#"><i class='bx bxl-facebook' ></i></a>
-                    <a href="#"><i class='bx bxl-twitter' ></i></a>
-                   </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock'></i> </span>
+                        <input id="loginPassword" type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forget">
+                        <label>
+                            <input type="checkbox">Remember me
+                        </label>
+                        <a href="#">Forget password?</a>
+                    </div>
+                    <button type="submit" class="btn">Sign In</button>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+            <!-- SIGN UP CODE  -->
+            <div class="form-box register">
+                <form id="signupForm">
+                    <h2> Sign Up</h2>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bx-user'></i></span>
+                        <input id="signupName" type="text" required>
+                        <label>Name</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxl-gmail'></i></span>
+                        <input id="signupEmail" type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-lock'></i> </span>
+                        <input id="signupPassword" type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forget">
+                        <label>
+                            <input type="checkbox">I agree to Terms & Conditions
+                        </label>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-
-    <div class="logreg-box">
-        <!-- SIGN IN CODE  -->
-        <div class="form-box login">
-            <form action="#">
-                <h2> Sign In</h2>
-
-                <div class="input-box">
-                    <span class="icon"><i class='bx bxl-gmail' ></i></span>
-                    <input type="email" required>
-                    <label >Email</label>
-                </div>
-
-                <div class="input-box">
-                    <span class="icon"><i class='bx bxs-lock' ></i> </span>
-                    <input type="password" required>
-                    <label >password</label>
-                </div>
-                 <div class="remember-forget">
-                    <label>
-                    <input type="checkbox">Remember me
-                    </label>
-                    <a href="#">Forget password?</a>
-                 </div>
-                 <button type="submit" class="btn">Sign In</button>
-                 <div class="login-register">
-                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
-                 </div>
-            </form>
-        </div>
-
-<!-- SIGN UP CODE  -->
-        <div class="form-box register"> 
-            <form action="#">
-                <h2> Sign Up</h2>
-
-                <div class="input-box">
-                    <span class="icon"><i class='bx bx-user'></i></span>
-                    <input type="text" required>
-                    <label >Name</label>
-                </div>
-
-                <div class="input-box">
-                    <span class="icon"><i class='bx bxl-gmail' ></i></span>
-                    <input type="email" required>
-                    <label >Email</label>
-                </div>
-
-                <div class="input-box">
-                    <span class="icon"><i class='bx bxs-lock' ></i> </span>
-                    <input type="password" required>
-                    <label >password</label>
-                </div>
-                 <div class="remember-forget">
-                    <label>
-                    <input type="checkbox">I agree to Terms & Conditions
-                    </label>
-                    
-                 </div>
-                 <button type="submit" class="btn">Sign Up</button>
-                 <div class="login-register">
-                    <p>Already have an account? <a href="#" class="login-link">Sign In </a></p>
-                 </div>
-            </form>
-        </div>
-    </div>
-    
-</div>
-
-
-
-
     <script src="script.js"></script>
 </body>
 </html>
